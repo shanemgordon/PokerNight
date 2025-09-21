@@ -17,6 +17,7 @@ class PokerTable:
     dealer = 0
     pot = 0
     lastToCall = -1
+    bet = 0
 
     def __init__ (self,playerIDs):
         # Initialize Deck
@@ -69,7 +70,7 @@ class PokerTable:
         distributeChat(Fore.WHITE + f'[PUBLIC:] {self.currentTurnPlayer.name} pitches in the small blind of ${SMALL_BLIND} and now has ${self.currentTurnPlayer.stack}',self.players)
         # Show all players their hand
         chatShowCards(self.players)
-
+        
         # Mark UTG player
         self.advanceTurn()
         chatTurnChange(self.players,self.turn)
